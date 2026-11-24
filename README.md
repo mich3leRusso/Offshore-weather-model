@@ -20,7 +20,7 @@ The data (`X_2005.txt`, `Y_2005.txt`, ~800 MB) is not in the repository. Run the
 | `iEMs_SHAP.ipynb` | SHAP feature attribution for the original RF and the U-Net | ~20 min |
 | `iEMs_Extremes.ipynb` | Storm days (daily-mean Hm0 above the 90th percentile) and model errors on them | ~2 min |
 
-Run `iEMs_UNet.ipynb` before the other notebooks: it creates the parsed-data cache and the trained weights that they reuse. Plots and tables are saved to `results/` (see [results/README.md](results/README.md)).
+Run `iEMs_UNet.ipynb` before the other notebooks: it creates the parsed-data cache and the trained weights that they reuse. Plots and tables are saved to `results/` 
 
 ## Main results
 
@@ -38,16 +38,15 @@ RMSE in metres.
 - **The original random-row split overstates skill.** It scores the original RF at R² 0.87, but on unseen months the same model gets R² 0.68.
 - **Storms are the weak point of both models.** On storm days both under-predict, and the error is about 1.8× larger than on other days.
 
-![Test RMSE and RF importances](results/3_comparison/plots/rf_with_wind_features.png)
+![Test RMSE and RF importances](results/rf_with_wind_features.png)
 
-![SHAP feature importance](results/4_shap/shap_comparison_all_models.png)
+![SHAP feature importance](results/shap_comparison_all_models.png)
 
-![Model errors on storm days](results/5_extremes/model_errors_storm_vs_other.png)
+![Model errors on storm days](results/model_errors_storm_vs_other.png)
 
-![Storm days 2005](results/5_extremes/storm_days_timeseries.png)
+![Storm days 2005](results/storm_days_timeseries.png)
 
 ## Limitations
 
 - Only one year of data (2005).
 - Training ran on a single seed.
-- The U-Net was early-stopped on a single validation month (September).
