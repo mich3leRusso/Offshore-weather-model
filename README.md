@@ -38,14 +38,6 @@ RMSE in metres.
 - **The original random-row split overstates skill.** It scores the original RF at R² 0.87, but on unseen months the same model gets R² 0.68.
 - **Storms are the weak point of both models.** On storm days both under-predict, and the error is about 1.8× larger than on other days.
 
-![Test RMSE and RF importances](results/rf_with_wind_features.png)
-
-![SHAP feature importance](results/shap_comparison_all_models.png)
-
-![Model errors on storm days](results/model_errors_storm_vs_other.png)
-
-![Storm days 2005](results/storm_days_timeseries.png)
-
 ## Limitations
 
 - Only one year of data (2005).
